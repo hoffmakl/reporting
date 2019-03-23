@@ -1,0 +1,52 @@
+---
+title: "Outputting Headers within Functions"
+author: "Katherine Hoffman"
+date: "3/20/2019"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, results="asis", warning=F, message=F)
+library(tidyverse)
+dat1 <- data.frame(x=rnorm(50),y=rnorm(50))
+dat2 <- data.frame(x=rnorm(250),y=rnorm(250))
+```
+
+```{r}
+# Make many mini functions
+xDistFun <- function(dat){
+  ggplot(dat, aes(x)) + geom_histogram(fill="blue")}
+
+yDistFun <- function(dat){
+  ggplot(dat, aes(y)) + geom_histogram(fill="red")}
+
+xRegFun <- function(dat){
+  lm(y ~ x, data=dat) %>% broom::tidy() %>% knitr::kable()}
+
+# Organize functions into a repetitive analysis
+runManyFuns <- function(dat){
+  title <- deparse(substitute(dat))
+  h1 <- "Distributions"
+  out1 <- list(xDistFun(dat = dat), yDistFun(dat = dat))
+  h2 <- "Regression Model"
+  out2 <- xRegFun(dat = dat)
+  headers <- c(h1, h2)
+  out <- list(out1, out2)
+  cat(paste0("\n#Data: ", title, "\n"))
+  for (i in 1:length(headers)){
+    cat(paste0("\n##", headers[i], "\n"))
+    print(out[i])
+  }
+}
+```
+
+```{r}
+# Run analysis on different data sets, outcomes, etc.
+runManyFuns(dat1)
+runManyFuns(dat2)
+```

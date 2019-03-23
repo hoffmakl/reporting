@@ -4,5 +4,5 @@ Example 1:
 Assemble a function which returns Rmarkdown-friendly output including headers for organization. 
 Useful if you have multiple outcomes/explanatory variables/data sets that you want to report identical analyses on.
 
-[Example 1 code](headerFuns.Rmd) outputs an html report with headers and subheaders for two identical sample analyses.
+[Example 1 code](headerFuns.Rmd), when knitted, compiles an html report with headers and subheaders for two identical sample analyses.
 

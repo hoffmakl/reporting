@@ -15,4 +15,4 @@ Export your plots (base R, ggplot2, or otherwise) as vector graphics objects, al
 ## Knit your Rmd output to a different folder
 *Requires the `here` package*
 
-[YAML code](yaml_knitDiffFolder.Rmd) to knit your Rmd report/output to a folder other than the one your Rmd document exists in. 
+[YAML code](yaml_knitDiffFolder.Rmd) to knit your Rmd report/output to a folder other than the one your Rmd document exists in. Also auto-updates the date in your report and in your report filename to reflect today's date.

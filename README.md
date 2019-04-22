@@ -17,5 +17,5 @@ Export your plots (base R, ggplot2, or otherwise) as vector graphics objects, al
 
 [YAML code](yaml_knitDiffFolder.Rmd) to knit your Rmd report/output to a folder other than the one your Rmd document exists in. Also auto-updates the date in your report and in your report filename to reflect today's date.
 
-## Calculate hours worked on a certain contract:
+## Calculate time spent on a project during working hours:
 Using the raw hours spent on a contract or project (I track these using toggl), use this [R script](calculate_hours.R) to calculate the exact percent of time you've spent on that contract in a specified time interval.

@@ -1,10 +1,10 @@
 ---
 title: "How to Knit to a Report Folder"
 author: "Katherine Hoffman, MS"
-date: "`r format(Sys.time(), '%B %d, %Y')`" # automatically update the date in the report
+date: "`r format(Sys.time(), '%B %d, %Y')`" 
 knit: (function(inputFile, encoding) { 
-      out_dir <- here::here("Reports"); # name of your desired output folder
-      sd <- format(Sys.Date(), "%Y-%m-%d"); # automatically update the date of the report file name
+      out_dir <- here::here("Reports"); 
+      sd <- format(Sys.Date(), "%Y-%m-%d"); 
       out_file <- paste0("ProjectName_Report_", sd, ".html");
       rmarkdown::render(inputFile,
                         encoding=encoding, 
